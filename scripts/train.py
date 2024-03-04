@@ -13,6 +13,16 @@ import optuna
 
 
 def train(args, model, device, train_loader, optimizer, epoch):
+    """Train an epoch of the model
+
+    Args:
+        args (any): Command line args
+        model (torch.nn): Torch model
+        device (torch.device): cuda or cpu
+        train_loader (any): loader
+        optimizer (any): optimizer
+        epoch (int): Current epoch
+    """
     model.train()
     for batch_idx, (data, target) in enumerate(train_loader):
 
@@ -38,6 +48,17 @@ def train(args, model, device, train_loader, optimizer, epoch):
 
 
 def test(model, device, test_loader, epoch):
+    """Test the model at current epoch
+
+    Args:
+        model (Torch.nn): Model to test
+        device (torch.device): cuda or cpu
+        test_loader (any): loader
+        epoch (int): current epoch
+
+    Returns:
+        float: test loss
+    """
     model.eval()
     test_loss = 0
     correct = 0
@@ -63,6 +84,10 @@ def test(model, device, test_loader, epoch):
 
 
 def main():
+    """run the training of the model
+
+    Trains the cnn model and does a hyperparam sweep.
+    """
     # Training settings
     parser = argparse.ArgumentParser(description="PyTorch MNIST Example")
     parser.add_argument(
