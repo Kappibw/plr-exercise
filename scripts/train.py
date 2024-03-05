@@ -86,7 +86,7 @@ def test(model, device, test_loader, epoch):
 def main():
     """run the training of the model
 
-    Trains the cnn model and does a hyperparam sweep.
+    Trains the cnn model and does a hyperparam sweep
     """
     # Training settings
     parser = argparse.ArgumentParser(description="PyTorch MNIST Example")
