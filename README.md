@@ -185,3 +185,20 @@ This may include:
 - Measuring the time
 
 ## Other usefull tasks [Bonus Points]
+
+#### Settings.json
+Instead of running
+```shell
+black --line-length 120 ~/git/plr-exercise
+```
+each time you want to reformat, you can instead open your vscode user settings:
+
+`ctrl+shit+p` -> "Open User Settings (JSON)"
+
+and edit it to add python options that format automatically every time you save:
+```
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+```
